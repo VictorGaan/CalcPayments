@@ -1,0 +1,77 @@
+﻿<Page x:Class="ItVolga.PageCalculator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItVolga"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Кредитный калькулятор">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock  Grid.Column="2" FontSize="14" FontWeight="Bold">Параметры кредита</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="10,10,-105,15" Width="546"><Run Text="Настройки калькулятора позволяют задавать дополнительные параметры"/><LineBreak/><Run Text="кредита, но нужно учитывать, что в каждом банке есть свои особенности расчетов."/></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2">Сумма кредита:</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3">Срок кредита:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1">Процентная ставка:</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="1">Единовременные комиссии:</TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="1">Вид платежа:</TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="1">Начало выплат:</TextBlock>
+        <Button Name="BtnСalculate" Background="#FF6995C2" Foreground="White" Click="BtnСalculate_Click" Grid.Column="1" Grid.Row="10">Рассчитать</Button>
+        <TextBox Name="SummaText" Grid.Column="2" Grid.Row="2"></TextBox>
+        <TextBox Name="SrokText" Grid.Column="2" Grid.Row="3"></TextBox>
+        <TextBox Name="ProcentText" Grid.Column="2" Grid.Row="4"></TextBox>
+        <TextBox Name="KomissiyText" Grid.Column="2" Grid.Row="6"></TextBox>
+        <ComboBox Name="VidBox" Grid.Row="7" Grid.Column="2" Margin="0 0 0 5">
+            <ComboBoxItem Content="Аннуитетный"/>
+            <ComboBoxItem Content="Дифференцированный"/>
+        </ComboBox>
+        <DatePicker Name="datestart" Grid.Column="2" Grid.Row="8"/>
+        <ComboBox Name="Money" Grid.Column="3" Grid.Row="2">
+            <ComboBoxItem Content="₽"/>
+        </ComboBox>
+        <ComboBox Name="srokBox" Grid.Column="3" Grid.Row="3">
+            <ComboBoxItem Content="мес."/>
+            <ComboBoxItem Content="год."/>
+        </ComboBox>
+        <ComboBox Name="ProcentBox" Grid.Column="3" Grid.Row="4">
+            <ComboBoxItem Content="% в год."/>
+        </ComboBox>
+        <ComboBox Name="Value" Grid.Column="3" Grid.Row="6">
+            <ComboBoxItem Content="фиксированный"/>
+            <ComboBoxItem Content="процентный"/>
+            <ComboBoxItem Content="% от суммы кредита"/>
+        </ComboBox>
+        <Grid Name="GridForData" Grid.ColumnSpan="5" Grid.RowSpan="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+        </Grid>
+    </Grid>
+</Page>
